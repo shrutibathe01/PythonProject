@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /*background-image: url('\static\image\bgimage.jpeg');*/
+    background-size: cover;
+    height: 160vh;
+    background-repeat: no-repeat;
+    width: auto;
+    
+}
+
+.navbar{
+    width: auto;
+    height: 75px;
+    margin-left: 150px;
+    margin-bottom: 50px;
+}
+
+.logo{
+    color: #ff7200;
+    font-size: 50px;
+    font-family: Arial;
+    padding-left: 20px;
+    float: left;
+    padding-top: 10px;
+    margin-top: 5px
+}
+
+.menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+    margin-left: 30px;
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 24px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: #ff7200;
+}
+
+.btn{
+    width: 70px;
+    height: 40px;
+    background: #ff7200;
+    border: 2px solid #ff7200;
+    margin-top: 13px;
+    color: #fff;
+    font-size: 15px;
+    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+.btn:hover{
+    color: #000;
+}
+
+.btn:focus{
+    outline: none;
+}
+
+.srch:focus{
+    outline: none;
+}
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-options {
+  display: none;
+  position: absolute;
+  overflow: auto;
+  align-items: center;
+}
+.dropdown:hover .dropdown-options {
+  display: block;
+  align-items: center;
+}
+.dropdown .btnn{
+    width: 100px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    font-size: 18px;
+    margin-left: 100px;
+    color: #fff;
+    margin-top: 27px;
+}
+.dropdown a{
+    text-decoration: none;
+    color: rgb(6, 6, 6);
+    font-size: 20px;
+    align-items: center;
+}
+
+.dropdown a:hover{
+    color: #ff7200;
+}
+.srch{
+    font-family: 'Times New Roman';
+    width: 300px;
+    height: 40px;
+    background: #fff;
+    border: 1px solid #120901;
+    margin-top: 13px;
+    color: #120901;
+    border-right: none;
+    font-size: 16px;
+    float: left;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.btn{
+    width: 200px;
+    height: 40px;
+    background: #ff7200;
+    border: 2px solid #ff7200;
+    margin-top: 13px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+.btn:hover{
+    color: #000;
+}
+
+.btn:focus{
+    outline: none;
+}
+
+.srch:focus{
+    outline: none;
+}
+
+.content{
+    width: 1200px;
+    height: auto;
+    color: #fff;
+    margin-left: 70px;
+}
+
+.content .par{
+    padding-bottom: 25px;
+    font-family: Arial;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.content h1{
+    font-family: 'Times New Roman';
+    font-size: 50px;
+    margin-top: 9%;
+    letter-spacing: 2px;
+     color: #fff;
+}
+
+.content .cn{
+    width: 160px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s ease;
+    
+}
+
+.content .cn a{
+    text-decoration: none;
+    color: #000;
+    transition: .3s ease;
+}
+
+.cn:hover{
+    background-color: #fff;
+}
+
+.content span{
+    color:#ff7200;
+    font-size: 65px
+
+}
+::placeholder{
+    color: rgb(8, 8, 8);
+    font-family: Arial;
+}
+*,:after,:before{box-sizing:border-box}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+a{color:inherit;text-decoration:none}
+
+.login-wrap{
+	width:100%;
+    margin-left: 57rem;
+	width:500px;
+	height: 35rem;
+	position:relative;
+	margin-top: -425px;
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+    margin-bottom: 30px;
+}
+.login-html{
+	width:100%;
+	height:100%;
+	position:absolute;
+	padding:70px 50px 30px 50px;
+	background:rgba(17, 17, 17, 0.698);
+}
+
+.login-html .sign-in-htm,
+.login-html .sign-up-htm{
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	position:absolute;
+	transform:rotateY(180deg);
+	backface-visibility:hidden;
+	transition:all .4s linear;
+    
+}
+.login-html .sign-in,
+.login-html .sign-up,
+.login-form .group .check{
+	display:none;
+}
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button{
+	text-transform:uppercase;
+    color: #ff7200;;
+}
+.login-html .tab{
+	font-size:22px;
+	margin-right:15px;
+	padding-bottom:5px;
+	margin:0 15px 10px 0;
+	display:inline-block;
+	border-bottom:2px solid transparent;
+}
+.login-html .sign-in:checked + .tab,
+.login-html .sign-up:checked + .tab{
+	color:rgb(245, 242, 242);
+	border-color:#ff7200;
+}
+.login-form{
+	min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+}
+.login-form .group{
+	margin-bottom:15px;
+}
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+	width:100%;
+	color:rgb(4, 4, 4);
+	display:block;
+}
+.login-form .group .input,
+.login-form .group .button{
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:solid rgba(255,255,255,.1);
+}
+.login-form .group input[data-type="password"]{
+	-webkit-text-security:circle;
+}
+.login-form .group .label{
+	color:#aaa;
+	font-size:12px;
+}
+.login-form .group .button{
+	background:#ff7200;
+}
+.login-form .group label .icon{
+	width:15px;
+	height:15px;
+	border-radius:2px;
+	position:relative;
+	display:inline-block;
+	background:rgb(172, 170, 170);
+}
+.login-form .group label .icon:before,
+.login-form .group label .icon:after{
+	content:'';
+	width:10px;
+	height:2px;
+	background:#fff;
+	position:absolute;
+	transition:all .2s ease-in-out 0s;
+}
+.login-form .group label .icon:before{
+	left:3px;
+	width:5px;
+	bottom:6px;
+	transform:scale(0) rotate(0);
+}
+.login-form .group label .icon:after{
+	top:6px;
+	right:0;
+	transform:scale(0) rotate(0);
+}
+.login-form .group .check:checked + label{
+	color:rgb(9, 9, 9);
+}
+.login-form .group .check:checked + label .icon{
+	background:#1161ee;
+}
+.login-form .group .check:checked + label .icon:before{
+	transform:scale(1) rotate(45deg);
+}
+.login-form .group .check:checked + label .icon:after{
+	transform:scale(1) rotate(-45deg);
+}
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+	transform:rotate(0);
+}
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
+	transform:rotate(0);
+}
+
+.hr{
+	height:2px;
+	margin:60px 0 50px 0;
+	background:rgb(172, 170, 170);
+}
+.foot-lnk{
+	text-align:center;
+    color: #fff;
+    font-size: 15px;
+}
+.foot-lnk a{
+    color: #ff7200;
+}
+#Suggestions{
+    margin: 34px;
+    display: flex;
+    max-width: 300px;
+    max-height: 300px;
+    position: absolute;
+}
+#Suggestions .box{ 
+    border: 2px solid brown;
+    padding: 34px;
+    margin: 2px 40px;
+    background:rgba(17, 17, 17, 0.698);
+    margin-bottom: 20px;
+}
+
+#Suggestions .box img{ 
+    height: 200px;
+    width:300px;
+   margin: auto;
+   display: block;
+}
+
+#Suggestions .box p{
+    font-family: 'Bree Serif', serif;
+
+} 
+.title h1{
+    font-family: 'Times New Roman';
+    font-size: 50px;
+    top:3%;
+    letter-spacing: 2px;
+     color: #fff;
+     margin-left: 70px;
+}
+.box h2{
+    color: #fff;
+}
+.group input{
+    border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:solid rgba(255,255,255,.1);
+    width:100%;
+	color:rgb(11, 11, 11);
+	display:block;
+}
+.group label{
+    color:#aaa;
+	font-size:12px;
+}
+.group{
+    margin-top: 20px;
+}
+</style>
+</head>
+<body style="background-image:linear-gradient( rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(/static/image/bgimage.jpeg)">
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">AIS-PG's</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li><a href="{% url 'aboutUs' %}">AboutUs</a></li>
+                    <li><a href="{% url 'faq' %}">FAQ</a></li>    
+                <div class="dropdown">
+                   <a><button class="btnn">Profile</button></a>
+                    <div class="dropdown-options">
+                      <a href="{% url 'TenantSignup' %}">Signup</a><br>
+                    </div>
+                  </div>
+        </ul>
+        </div>
+    </div>
+        </div>
+        <div class="content">
+            <h1>Accommodation<br>
+<span>Information</span> <br>Site</h1>
+            <p class="par">Our site provides easy access to nearest PG and fullfill's all the requirements of <br>a proper Accommodation.<br>
+                Here you can get affordable and comfortable PG's with verified users. It provies<br> full privacy to owner.
+            </p>
+            <form action="#" method='POST'>
+                {% csrf_token %}
+            <div class="search">
+                <input class="srch" placeholder="Type To text" name="Pg_Address">
+                <button class="btn" type="submit" value="search" name="submit">Search</button>
+            </div>
+            <div class="login-wrap">
+                <div class="login-html">
+                    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Tenant Login</label>
+                    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Owner Login</label>
+                    
+                    <div class="login-form">
+                       
+                        <div class="sign-in-htm">
+                            <div class="group">
+                                <label>Enter Mail-ID:</label>
+                                <input type="text" placeholder="Enter Mail-ID" id="mail" name='email1'
+                                onfocusout="validateMailID('mail','mail_error')" oninput="validateMailID('mail','mail_error')">
+                                <!-- Username Error msg -->
+                                <small class="mandatory" id="mail_error"></small>
+                            <div class="group">
+                                <label>Enter Password:</label>
+                            <input type="password" id="password-field1" name='pass1'
+                                placeholder="Enter Password"  oninput="isStrongPass()" onfocusout="isStrongPass()">
+                            </div>
+                        </div>
+                            
+                            <div class="group">
+                                <input type="submit" class="button" value="Login" name="submit">
+                            </div>
+                            <div class="hr"></div>
+                            <div class="foot-lnk">
+                                <a href="#forgot">Forgot Password?</a>
+                                    <p class="link">Don't have an account
+                                <a href="{% url 'TenantSignup' %}">Sign up </a> here</a></p>
+                            </div>
+                        </div>
+                    </form>
+
+                    <form action="#" method=POST>
+                        {% csrf_token %}
+                        <div class="sign-up-htm">
+                            <div class="group">
+                                <label>Enter Mail-ID:</label>
+                                <input type="text" placeholder="Enter Mail-ID" id="mail1" name='email2'
+                                onfocusout="validateMailID('mail','mail_error')" oninput="validateMailID('mail','mail_error')">
+                                <!-- Username Error msg -->
+                                <small class="mandatory" id="mail_error"></small>
+                    
+                            <div class="group">
+                                <label>Enter Password:</label>
+                            <input type="password" id="password-field1" name="pass2"
+                                 placeholder="Enter Password"
+                                 oninput="isStrongPass()" onfocusout="isStrongPass()" >
+                            </div>
+                            
+                            <div class="group">
+                                <input type="submit" class="button" value="Login" name="owner">
+                            </div>
+                            <div class="hr"></div>
+                            <div class="foot-lnk">
+                                <a href="#forgot">Forgot Password?</a>
+                                    <p class="link">Don't have an account
+                                <a href="{% url 'TenantSignup' %}">Sign up </a> here</a></p>
+                            </div>
+                        </div>
+                    </form> 
+                    </div>
+                </div>
+            </div>
+                        </div>
+                    </div>
+                    <div class="title">
+                    <h1 class="h-primary center">PG-Suggestion</h1>
+                </div>
+                    <section id="Suggestions">
+                        <div id="Suggestions">
+                            <div class="box">
+                                <img src="/static/image/front.jpeg" alt="img">
+                                <h2 class="h-secondary center">Saraswati PG's</h2>
+                                <p class="center"></p>
+                            </div>
+                            <div class="box">
+                                <img src="/static/image/front2.jpeg" alt="img">
+                                <h2 class="h-secondary center">Chaitany's PG's</h2>
+                                <p class="center"></p>
+                            </div>
+                            <div class="box">
+                                <img src="/static/image/front3.jpeg" alt="img">
+                                <h2 class="h-secondary center">Raghukul PG's</h2>
+                                <p class="center"></p>
+                            </div>
+                            
+                        </div>
+                    </section>
+            </div>
+        </div>
+        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    </body>
+    </html>
+                </div>
+        </div>
+    </div>
+    <script>
+
+        function setError(id, error, id2) {
+            document.getElementById(id).innerHTML = error;
+            document.getElementById(id).style.color = "red";
+            document.getElementById(id2).style.borderColor = "red";
+    
+        }
+    
+        function setCorrect(id1, id2) {
+            document.getElementById(id1).innerHTML = "";
+            document.getElementById(id2).style.borderColor = "blue";
+    
+        }
+    
+        
+    
+        // Strong Password Check
+    
+        function isStrongPass() {
+    
+    
+            let flag = isEmptyField("password-field1", "pass_error1");
+            if (flag == false) {
+                return false;
+            }
+    
+            console.log("I got call")
+            var regPass = /^(?=.\d)(?=.[!@#$%^&])(?=.[a-z])(?=.*[A-Z]).{6,12}$/;
+            let pass = document.getElementById("password-field1").value
+    
+            if (!regPass.test(pass)) {
+                console.log("Invalid pass");
+                setError("pass_error1", "Please Enter The Strong Password", "password-field1");
+                return false;
+    
+            } else {
+                setCorrect("pass_error1", "password-field1");
+    
+                console.log("Valid pass")
+                return true;
+            }
+        }
+    
+      
+        // To Validate MAil ID
+        function validateMailID() {
+    
+            let flag = isEmptyField("mail", "mail_error");
+            if (flag == false) {
+                return false;
+            }
+    
+            console.log("mail id");
+            var regName = /[a-z0-9!#$%&'+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'+/=?^_`{|}~-]+)@(?:[a-z0-9](?:[a-z0-9-][a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+            var name = document.getElementById('mail').value;
+    
+            if (regName.test(name)) {
+                setCorrect("mail_error", "mail");
+                return true;
+    
+            } else {
+                console.log("inValid mail")
+                setError("mail_error", "Please Enter Valid Mail ID", "mail");
+                return false;
+    
+            }
+    
+        }
+        /*function validateMailID() {
+    
+    let flag = isEmptyField("mail1", "mail_error");
+    if (flag == false) {
+        return false;
+    }
+
+    console.log("mail id");
+    var regName = /[a-z0-9!#$%&'+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'+/=?^_`{|}~-]+)@(?:[a-z0-9](?:[a-z0-9-][a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+    var name = document.getElementById('mail1').value;
+
+    if (regName.test(name)) {
+        setCorrect("mail_error", "mail1");
+        return true;
+
+    } else {
+        console.log("inValid mail")
+        setError("mail_error", "Please Enter Valid Mail ID", "mail1");
+        return false;
+
+    }
+
+}
+        function isEmptyField(inputID, errorID) {
+            let data = document.getElementById(inputID).value
+    
+            if (data.length == 0) {
+                console.log("Invalid Data of", inputID);
+                setError(errorID, "Please Fill The Field", inputID);
+                return false;
+            }
+    
+            else {
+                console.log("Correct data");
+                setCorrect(errorID, inputID);
+                return true;
+            }
+        }*/
+    
+    
+        
+        function validateData() {
+            let flag3 = isStrongPass();
+            let flag4 = confirmedPass();
+            let flag7 = validateMailID();
+    
+            if (flag1 && flag2 && flag3 && flag4 && flag5 && flag6 && flag7 && flag8 && flag9 && flag10 && flag11 && flag12 && flag13
+            ) {
+            alert("Good luck enjoy Journey");
+    
+            }
+            else {
+                return false;
+            }
+    
+        }
+    
+    
+    
+        //  To handle show password field
+        $(".toggle-password1").click(function () {
+    
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+    
+        $(".toggle-password2").click(function () {
+    
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+
+        function removeSpaces(string) {
+            return string.split(' ').join('');
+        } 
+    </script>
+       
+        </script>
+</body>
+</html>

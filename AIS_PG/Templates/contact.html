@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+      *{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /*background-image: url('\static\image\bgimage.jpeg');*/
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+    width: auto;
+    
+}
+
+.navbar{
+    width: auto;
+    height: 75px;
+    margin-left: 150px;
+    margin-bottom: 50px;
+}
+
+.logo{
+    color: #ff7200;
+    font-size: 50px;
+    font-family: Arial;
+    padding-left: 20px;
+    float: left;
+    padding-top: 10px;
+    margin-top: 5px
+}
+
+.menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+    margin-left: 30px;
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 24px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: #ff7200;
+}
+
+.btn{
+    width: 70px;
+    height: 40px;
+    background: #ff7200;
+    border: 2px solid #ff7200;
+    margin-top: 13px;
+    color: #fff;
+    font-size: 15px;
+    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+.btn:hover{
+    color: #000;
+}
+
+.btn:focus{
+    outline: none;
+}
+
+.srch:focus{
+    outline: none;
+}
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-options {
+  display: none;
+  position: absolute;
+  overflow: auto;
+  align-items: center;
+}
+.dropdown:hover .dropdown-options {
+  display: block;
+  align-items: center;
+}
+.dropdown .btnn{
+    width: 100px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    font-size: 18px;
+    margin-left: 100px;
+    color: #fff;
+    margin-top: 27px;
+}
+.dropdown a{
+    text-decoration: none;
+    color: rgb(6, 6, 6);
+    font-size: 20px;
+    align-items: center;
+}
+
+.dropdown a:hover{
+    color: #ff7200;
+}
+.contact-section{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -100px;
+  border: #000;
+}
+
+.contact-info{
+  color: rgb(13, 13, 13);
+  max-width: 500px;
+  line-height: 65px;
+  padding-left: 50px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.contact-info i{
+  margin-right: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.contact-form{
+  max-width: 500px;
+  margin-right: 50px;
+}
+
+.contact-info, .contact-form{
+  flex: 1;
+}
+
+.contact-form h2{
+  color: #fff;
+  text-align: center;
+  font-size: 35px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.contact-form .text-box{
+  background: #000;
+  color: #fff;
+  border: none;
+  width: calc(50% - 10px);
+  height: 40px;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.contact-form .text-box:first-child{
+  margin-right: 15px;
+}
+
+.contact-form textarea{
+  background: #000;
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  min-height: 200px;
+  max-height: 400px;
+  resize: vertical;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.contact-form .send-btn{
+  float: right;
+  background: #2E94E3;
+  color: #fff;
+  border: none;
+  width: 120px;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form .send-btn:hover{
+  background: #0582E3;
+}
+
+@media screen and (max-width: 950px){
+  .contact-section{
+    flex-direction: column;
+  }
+
+  .contact-info, .contact-form{
+    margin: 30px 50px;
+  }
+
+  .contact-form h2{
+    font-size: 30px;
+  }
+
+  .contact-form .text-box{
+    width: 100%;
+  }
+}
+
+/*css for alert messages*/
+
+.alert-success{
+  z-index: 1;
+  background: #D4EDDA;
+  font-size: 18px;
+  padding: 20px 40px;
+  min-width: 420px;
+  position: fixed;
+  right: 0;
+  top: 10px;
+  border-left: 8px solid #3AD66E;
+  border-radius: 4px;
+}
+
+.alert-error{
+  z-index: 1;
+  background: #FFF3CD;
+  font-size: 18px;
+  padding: 20px 40px;
+  min-width: 420px;
+  position: fixed;
+  right: 0;
+  top: 10px;
+  border-left: 8px solid #FFA502;
+  border-radius: 4px;
+}
+      
+      
+</style>
+  </head>
+  <body style="background-image:linear-gradient( rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(/static/image/bgimage.jpeg)">
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">AIS-PG's</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                  <li><a href="{% url 'maindesktop' %}">Home</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="{% url 'aboutUs' %}">AboutUs</a></li>
+                  <li><a href="{% url 'faq' %}">FAQ</a></li>  
+                  <div class="dropdown">
+                    <a><button class="btnn">Profile</button></a>
+                     <div class="dropdown-options">
+                       <a href="{% url 'TenantSignup' %}">Signup</a><br>
+                       <a href="{% url 'maindesktop' %}">Login</a><br>
+                     </div>
+                 </div>  
+                </ul>
+            </div>
+        </div>
+    <div class="contact-section">  
+        <div class="contact-info">
+        <div><i class="fas fa-map-marker-alt"></i>Nowrosjee Wadia College, Pune</div>
+        <div><i class="fas fa-envelope"></i>aispg0126@gmail.com</div>
+        <div><i class="fas fa-phone"></i>+91 8855025729</div>
+        <div><i class="fas fa-clock"></i>Mon - Fri 8:00 AM to 5:00 PM</div>
+      </div>
+      <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form class="contact" action="" method="post">
+          {% csrf_token %}
+          {% load static %}
+          <input type="text" name="name" class="text-box" placeholder="Your Name" required>
+          <input type="email" name="contact_email" class="text-box" placeholder="Your Email" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <input type="submit" name="submit" class="send-btn" value="Send">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

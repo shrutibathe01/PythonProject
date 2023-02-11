@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FAQ</title>
+    <style>
+      *{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /*background-image: url('\static\image\bgimage.jpeg');*/
+    background-size: cover;
+    height: 140vh;
+    background-repeat: no-repeat;
+    
+}
+
+.navbar{
+    width: auto;
+    height: 75px;
+    margin-left: 150px;
+    margin-bottom: 50px;
+}
+
+.logo{
+    color: #ff7200;
+    font-size: 50px;
+    font-family: Arial;
+    padding-left: 20px;
+    float: left;
+    padding-top: 10px;
+    margin-top: 5px
+}
+
+.menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+    margin-left: 30px;
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 24px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: #ff7200;
+}
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-options {
+  display: none;
+  position: absolute;
+  overflow: auto;
+  align-items: center;
+}
+.dropdown:hover .dropdown-options {
+  display: block;
+  align-items: center;
+}
+.dropdown .btnn{
+    width: 100px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    font-size: 18px;
+    margin-left: 100px;
+    color: #fff;
+    margin-top: 27px;
+}
+.dropdown a{
+    text-decoration: none;
+    color: rgb(204, 200, 200);
+    font-size: 20px;
+    align-items: center;
+}
+
+.dropdown a:hover{
+    color: #ff7200;
+}
+.container {
+  margin: 0 auto;
+  padding: 4rem;
+  width: 48rem;
+  box-sizing: border-box;
+  background: rgba(17, 17, 17, 0.698);;
+}
+h1 {
+  font-size: 50px;
+  align-items: center;
+  color: #f8f6f6;
+  padding: 1.3rem;
+}
+.accordion a {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem 3rem 1rem 1rem;
+  color: #ff7200;
+  font-size: 1.50rem;
+  font-weight: 400;
+  border-bottom: 1px solid #e5e5e5;
+}
+.accordion a:hover,
+.accordion a:hover::after {
+  cursor: pointer;
+  color: #f8f6f6;
+}
+.accordion a:hover::after {
+  border: 1px solid #f8f6f6;
+}
+.accordion a.active {
+  color: #080808;
+  border-bottom: 1px solid #f8f6f6;}
+.accordion a::after {
+  font-family: 'Ionicons';
+  content: '\f218';
+  position: absolute;
+  float: right;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: #7288a200;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid #7288a200;
+  text-align: center;
+  font-weight: bolder;
+}
+.accordion a.active::after {
+  font-family: 'Ionicons';
+  content: '\f209';
+  color: #070707;
+  border: 1px solid #f8f6f6;
+  font-weight: bolder;
+}
+.accordion .content {
+  opacity: 0;
+  padding: 0 1rem;
+  max-height: 0;
+  border-bottom: 1px solid #e5e5e5;
+  overflow: hidden;
+  clear: both;
+  -webkit-transition: all 0.2s ease 0.15s;
+  -o-transition: all 0.2s ease 0.15s;
+  transition: all 0.2s ease 0.15s;
+}
+.accordion .content p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #e5e5e5;
+}
+.accordion .content.active {
+  opacity: 1;
+  padding: 1rem;
+  max-height: 100%;
+  -webkit-transition: all 0.35s ease 0.15s;
+  -o-transition: all 0.35s ease 0.15s;
+  transition: all 0.35s ease 0.15s;
+}
+    </style>
+</head>
+<body style="background-image:linear-gradient( rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(/static/image/bgimage.jpeg)">
+  <div class="main">
+    <div class="navbar">
+        <div class="icon">
+            <h2 class="logo">AIS-PG's</h2>
+        </div>
+        <div class="menu">
+            <ul>
+              <li><a href="{% url 'maindesktop' %}">Home</a></li>
+              <li><a href="{% url 'contact' %}">Contact</a></li>
+              <li><a href="{% url 'aboutUs' %}">AboutUs</a></li>
+              <li><a href="#">FAQ</a></li>    
+            <div class="dropdown">
+               <a><button class="btnn">Profile</button></a>
+                <div class="dropdown-options">
+                  <a href="{% url 'TenantSignup' %}">Signup</a><br>
+                  <a href="{% url 'maindesktop' %}">Login</a><br>
+                </div>
+            </div>
+            </ul>
+        </div>
+    </div>
+</div>
+        <div class="container">
+ 
+            <h1>Frequently Asked Questions</h1>
+           
+            <div class="accordion">
+              <div class="accordion-item">
+                <a>How to connect with Owner?</a>
+                <div class="content">
+                  <p>Each PG profile contains details about pg as well as owner.</p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <a>Are the PG's verified?</a>
+                <div class="content">
+                  <p>Yes, each PG and owner is verified by us.</p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <a>How can I make booking?</a>
+                <div class="content">
+                  <p>For booking a room first you will have to fill a registration form, then owner will inform you for further process.</p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <a>How can I create my profile?</a>
+                <div class="content">
+                  <p>Go to about us page, there we have uploaded a manual for you to understand the process easily.</p>
+                </div>
+              </div>
+              </div>
+            </div>
+            
+          </div>
+           
+          <script src='https://code.jquery.com/jquery-3.2.1.main.js'></script>
+          <script>
+          const items = document.querySelectorAll(".accordion a");
+ 
+            function toggleAccordion(){
+              this.classList.toggle('active');
+              this.nextElementSibling.classList.toggle('active');
+            }
+             
+            items.forEach(item => item.addEventListener('click', toggleAccordion));</script>
+    </div>
+</body>
+</html>

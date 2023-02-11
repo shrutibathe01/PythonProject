@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        <title>TenantDetails</title>
+		<style>
+		  html{
+    text-align: center;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  /*background-image: url('/static/image/bgimage.jpeg');*/
+  background-size: cover;
+  height: 100vh;
+  background-repeat: no-repeat;
+  
+}
+
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    margin: 50px auto;
+  }
+
+table,th,td{
+    border: 1px solid white;
+}
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 5px;
+  }
+  
+  tr:nth-child(odd) {
+    background-color:	#e6e6fa;
+  }
+
+  tr:nth-child(even) {
+    background-color:	white;
+  }
+
+h2{
+    color: #FFFFFF;
+    font-weight: 100;
+
+}
+</style>
+</head>
+
+<body style="background-image:linear-gradient( rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(/static/image/bgimage.jpeg)">
+                
+
+                <table id="display">
+                    <tr>
+                      <th>Full Name</th>
+                      <th>Pg Name</th> 
+                      <th>Pg Address</th>
+					            <th>Info</th>
+                      <th>Pg_PhoneNo</th>
+                      <th>Rent1</th>
+                      <th>Rent2</th>
+                      <th>Rent3</th>
+                      <th>More</th>
+                      <th>rent</th>
+                      <th>food</th>
+                      <th>wifi</th>
+                      <th>furniture</th>
+                      <th>laundry</th>
+                      <th>parking</th>
+                      <th>noS</th>
+                      <th>S1</th>
+                      <th>S2</th>
+                      <th>MoreRent</th>
+                    </tr>
+                    {% for x in Info %}
+                    <tr>
+                      <th>{{x.0}}</th>
+                      <th>{{x.1}}</th> 
+                      <th>{{x.2}}</th>
+					            <th>{{x.3}}</th>
+                      <th>{{x.4}}</th>
+					            <th>{{x.5}}</th>
+                      <th>{{x.8}}</th>
+                      <th>{{x.9}}</th>
+                      <th>{{x.10}}</th>
+                      <th>{{x.11}}</th>
+                      <th>{{x.12}}</th>
+                      <th>{{x.13}}</th>
+                      <th>{{x.14}}</th>
+                      <th>{{x.15}}</th>
+                      <th>{{x.16}}</th>
+                      <th>{{x.17}}</th>
+                      <th>{{x.18}}</th>
+                      <th>{{x.19}}</th>
+                      <th>{{x.20}}</th>
+                      <th><a href="{% url 'DeleteOwner' x.21 %}">Delete</a></th>
+                      <tr>
+                    {% endfor %}
+                </table>
+                
+
+
+            </body>
+        </html>

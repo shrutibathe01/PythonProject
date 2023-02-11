@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OwnerSignup</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /*background-image: url('\static\image\bgimage.jpeg');*/
+    background-size: cover;
+    height: 250vh;
+    background-repeat: no-repeat;
+    width: auto;
+    
+}
+
+.navbar{
+    width: auto;
+    height: 75px;
+    margin-left: 150px;
+    margin-bottom: 50px;
+}
+
+.logo{
+    color: #ff7200;
+    font-size: 50px;
+    font-family: Arial;
+    padding-left: 20px;
+    float: left;
+    padding-top: 10px;
+    margin-top: 5px
+}
+
+.menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+    margin-left: 30px;
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 24px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: #ff7200;
+}
+
+.btn{
+    width: 70px;
+    height: 40px;
+    background: #ff7200;
+    border: 2px solid #ff7200;
+    margin-top: 13px;
+    color: #fff;
+    font-size: 15px;
+    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+.btn:hover{
+    color: #000;
+}
+
+.btn:focus{
+    outline: none;
+}
+
+.srch:focus{
+    outline: none;
+}
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-options {
+  display: none;
+  position: absolute;
+  overflow: auto;
+  align-items: center;
+}
+.dropdown:hover .dropdown-options {
+  display: block;
+  align-items: center;
+}
+.dropdown .btnn{
+    width: 100px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    font-size: 18px;
+    margin-left: 100px;
+    color: #fff;
+    margin-top: 27px;
+}
+.dropdown a{
+    text-decoration: none;
+    color: rgb(6, 6, 6);
+    font-size: 20px;
+    align-items: center;
+}
+
+.dropdown a:hover{
+    color: #ff7200;
+}
+.content{
+    width: 900px;
+    height: auto;
+    margin: auto;
+    color: #fff;
+    position: relative;
+}
+
+.content .par{
+    padding-left: 20px;
+    padding-bottom: 25px;
+    font-family: Arial;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+}
+
+.content h1{
+    font-family: 'Times New Roman';
+    font-size: 50px;
+    padding-left: 10px;
+    margin-top: 9%;
+    letter-spacing: 2px;
+}
+
+.form{
+    width: 250px;
+    height: 380px;
+    position: absolute;
+    transform: translate(0%,-5%);
+    border-radius: 10px;
+    padding: 25px;
+    
+}
+.form input{
+    width: 240px;
+    height: 35px;
+    background: transparent;
+    border-bottom: 1px solid #ff7200;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    font-family: sans-serif;
+}
+
+.form input:focus{
+    outline: none;
+}
+
+::placeholder{
+    color: #fff;
+    font-family: Arial;
+}
+.button{
+    width: 250px;
+    height: 380px;
+    position: absolute;
+    top: -20px;
+    left: 600px;
+}
+.data{
+    width: 900px;
+    height: auto;
+    color: #fff;
+    position: relative;
+    font-size: 20px;
+    margin: auto;
+    font-weight: bold;
+}
+
+h1{color: rgb(245, 245, 245);
+    font-size: 50px;
+    font-family: Arial;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    margin-left: 35px;
+}
+h4{color:  rgb(245, 245, 245);
+    font-size: 40px;
+    font-family: Arial;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.form-group{
+    width: 950px;
+    height: auto;
+    color: #fff;
+    position:absolute;
+    align-items: center;
+    margin-right: 200px;
+    border-style:outset;
+    border-color:rgba(255, 255, 255, 0.396);
+    text-align: left;
+    background:rgba(17, 17, 17, 0.698);
+}
+label{
+    text-align: center;
+    margin-left: 40px;
+}
+.form-group input{
+    width: 300px;
+    height: 30px;
+    background:#fff;
+    border-bottom: 1px solid #ff7200;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    color: rgb(15, 15, 15);
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    font-family: sans-serif;
+}
+.form1 input{
+    width: 200px;
+    height: 25px;
+    background:#fff;
+    border-bottom: 1px solid #ff7200;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    color: rgb(15, 15, 15);
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    text-align: center;
+    margin-left: 20px;
+    margin-right:15px;
+}
+
+.form1{
+    width: 950px;
+    height: auto;
+    color: #fff;
+    position: absolute;
+    font-size: 20px;
+    margin: auto;
+    font-weight: bold;
+    margin-top: 100px;
+    background:rgba(17, 17, 17, 0.698);
+
+    
+}
+legend {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 15px 15px 15px;
+}
+
+.btnn{
+    width: 240px;
+    height: 30px;
+    background: #ff7200;
+    border: none;
+    margin-top: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.4s ease;
+    align-items: center;
+    margin-top: 50px;
+}
+.btnn:hover{
+    background: #fff;
+    color: #ff7200;
+}
+.btnn a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+::placeholder{
+    text-align: center;
+    font-family: Arial;
+    color:black;
+}
+.rooms label{
+    margin-left: 40px;
+}
+textarea{
+    border: none;
+    width: 70%;
+    align-items:center;
+    font-size: 15px;
+    min-height: 100px;
+    max-height: 200px;
+    resize: vertical;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    margin-top:20px;
+    margin-left:150px;
+  }
+
+   </style>
+</head>
+<body style="background-image:linear-gradient( rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(/static/image/bgimage.jpeg)">
+<div class="main">
+    <div class="navbar">
+        <div class="icon">
+            <h2 class="logo">AIS-PG's</h2>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="{% url 'maindesktop' %}">Home</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'aboutUs' %}">AboutUs</a></li>
+                <li><a href="{% url 'faq' %}">FAQ</a></li>   
+                <div class="dropdown">
+                    <a><button class="btnn">Profile</button></a>
+                     <div class="dropdown-options">
+                       <a href="{% url 'TenantSignup' %}">Signup</a><br>
+                       <a href="{% url 'maindesktop' %}">Login</a><br>
+                     </div>
+                 </div>  
+            </ul>
+        </div>
+    </div>
+        <div class="data">
+            <div class="form-group"  method=POST name="form">
+                <h1>Owner Profile</h1><br>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                <div class="row">
+
+                    <div class="col">
+
+                        <!-- First name input field -->
+                        <div class="data">
+                            <label>Full Name:</label><label style="color: red;"></label>
+                            <input type="text" class="form-control inputdata" placeholder="Enter Full Name" id="Full_Name" name="Full_Name">
+                            <!-- first name Error msg -->
+                            <small class="mandatory" id="Full_Name_error"></small>
+                        </div>
+                    </div>
+
+
+                    <div class="col">
+
+                        <!--  input field -->
+                        <div class="data">
+                            <label>Pg-Name:</label><label style="color: red;"></label>
+                            <input type="text" class="form-control inputdata" placeholder="Enter Pg-Name(For Girls/Boys/both)" id="Pg_Name" name="Pg_Name">
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <!--  input field -->
+                        <div class="data">
+                            <label>Pg-Address:</label><label style="color: red;"></label>
+                            <input type="text" class="form-control inputdata" placeholder="Enter Pg-Address" name="Pg_Address">
+                            <!--Last Name Error msg -->
+                            <small class="mandatory" id="Pg_Address_error"></small>
+                        </div>
+                    </div>
+                    <div class="data">
+
+                        <label>PG-Phone No.:</label>
+                                <input type="text" class="form-control inputdata" name="Pg_PhoneNo"
+                                    placeholder="PG-Phone No.:">
+                    </div>
+
+                <!-- Mail ID input field -->
+                <div class="data">
+                    <label>Email ID:</label><label style="color: red;"></label>
+                    <input type="text" class="form-control inputdata" placeholder="Enter Mail-ID" name="EmailId">
+                    <!-- Mail ID  Error msg -->
+                    <small class="mandatory" id="mail_error"></small>
+                </div>
+                <!-- Password input field -->
+                <div class="data ">
+                    <label>Enter The Password:</label></label><label style="color: red;"></label>
+                            <input type="Password" class="form-control inputdata" name="Password"
+                                placeholder="Enter Password" oninput="isStrongPass()" onfocusout="isStrongPass()">
+                        <div class="col right">
+
+                            <span toggle="#Password-field1" class="fa fa-fw fa-eye field-icon toggle-Pasword1"
+                                style="font-size: 1.3vw;"></span>
+                        </div>
+
+                </div>
+
+                <!-- confirm Password input field -->
+                <div class="data ">
+
+                    <label>Confirm Password:</label></label><label style="color: red;"></label>
+                            <input type="Password" class="form-control inputdata" id="ocPasword"
+                                placeholder="Confirm Password" oninput="confirmedPass()" onfocusout="confirmedPass()"
+                                onpaste="return false;">
+                        <div class="col right">
+
+                            <span toggle="#Password-field2" class="fa fa-fw fa-eye field-icon toggle-Pasword2"
+                                style="font-size: 1.3vw;"></span>
+                        </div>
+                    <small class="mandatory" id="pass_error2"></small>
+                </div>
+               <!-- <div class="data ">
+                    <label>Upload Image</label>
+                    <input type="file" name=Image>
+                </div>-->
+                <br>
+                    
+                        <h1>About-Pg:</h1>
+                        <div class="aminities">
+                                <h4>Capacity of Room</h4>
+                        <label> For 1 Member :- <input type="text" name="Rent1" placeholder="Rent">     <input type="text" name="No_SharingRent" placeholder="Available_Rooms"><br></label>
+                        <label>For 2 Member :- <input type="text" name="Rent2" placeholder="Rent">  <input type="text" name="SharingRent_1" placeholder="Available_Rooms"><br></label>
+                        <label>For 3 Member :- <input type="text" name="Rent3" placeholder="Rent">  <input type="text" name="SharingRent_2" placeholder="Available_Rooms"><br></label>
+                        <label>For More Member :-<br>
+                                    <input type="text" name="No_Members" placeholder="Number of Members ">
+                                    <input type="text" name="Rent_Members" placeholder="Rent">  <input type="text" name="MoreRent" placeholder="Available_Rooms"></h3></label>
+                            
+                                    <h4>Facilities Provided</h4>
+                                        <p>Food availablility</p>
+                                        <input type="radio" name="Food" value="Yes"> Yes
+                                        <input type="radio" name="Food" value="No"> No
+                                        <p>Wifi availablility</p>
+                                        <input type="radio" name="Wifi" value="Yes"> Yes
+                                        <input type="radio" name="Wifi" value="No"> No
+                                        <p>Furniture availablility</p>
+                                        <input type="radio" name="Furniture" value="Yes"> Yes
+                                        <input type="radio" name="Furniture" value="No"> No
+                                        <p>Laundary availablility</p>
+                                        <input type="radio" name="Laundary" value="Yes"> Yes
+                                        <input type="radio" name="Laundary" value="No"> No
+                                        <p>Parking availablility</p>
+                                        <input type="radio" name="Parking" value="Yes"> Yes
+                                        <input type="radio" name="Parking" value="No"> No
+                                        <!--p style="margin-top: 10px;">Identification (Adhar/Pan Card)</p>
+                                        <input type="file" name="Image" style="margin-left: 30px;"-->
+                                        <h4>PG-Info</h4>
+                                        <h5 style="text-align: center;">(In 2-3 lines)</h5>
+                                <textarea name="Info" rows="4" required></textarea>
+
+                            <div style="border: 0px solid red;text-align: center;margin-bottom: 2%;">
+                                <button type="submit" name="submit"class="btnn">Save & Continue</button>
+                                        </div>
+                                    </div>
+                    
+
+                </form>
+                </div>
+
+                <br>
+                </div>
+            
+    </div>
+    <script>
+
+        function setError(id, error, id2) {
+            document.getElementById(id).innerHTML = error;
+            document.getElementById(id).style.color = "red";
+            document.getElementById(id2).style.borderColor = "red";
+    
+        }
+    
+        function setCorrect(id1, id2) {
+            document.getElementById(id1).innerHTML = "";
+            document.getElementById(id2).style.borderColor = "blue";
+    
+        }
+    
+        // Validation for  first name,last name,city & state
+        function isValidData(inputID, errorID) {
+    
+            let flag = isEmptyField(inputID, errorID);
+            if (flag == false) {
+                return false;
+            }
+            var regName = /^[a-zA-Z]+$/;
+            let lname = document.getElementById(inputID).value
+            if (!regName.test(lname)) {
+                console.log("Invalid Data of", inputID);
+                setError(errorID, "Please enter the valid data", inputID);
+                return false;
+    
+    
+            } else if (lname.length < 2) {
+                console.log("Short lname");
+                setError(errorID, "Length of data should be at least 2", inputID);
+                return false;
+    
+            }
+            else {
+                console.log("Correct lname");
+                setCorrect(errorID, inputID);
+                return true;
+            }
+        }
+    
+        // Strong Password Check
+    
+        function isStrongPass() {
+    
+    
+            let flag = isEmptyField("password-field1", "pass_error1");
+            if (flag == false) {
+                return false;
+            }
+    
+            console.log("I got call")
+            var regPass = /^(?=.\d)(?=.[!@#$%^&])(?=.[a-z])(?=.*[A-Z]).{6,12}$/;
+            let pass = document.getElementById("password-field1").value
+    
+            if (!regPass.test(pass)) {
+                console.log("Invalid pass");
+                setError("pass_error1", "Please Enter The Strong Password", "password-field1");
+                return false;
+    
+            } else {
+                setCorrect("pass_error1", "password-field1");
+    
+                console.log("Valid pass")
+                return true;
+            }
+        }
+    
+        // To confirmed the password 
+        function confirmedPass() {
+    
+            let flag = isEmptyField("password-field2", "pass_error2");
+            if (flag == false) {
+                return false;
+            }
+            console.log("I got call with wrong pass")
+    
+            let pass1 = document.getElementById("password-field1").value
+            let pass2 = document.getElementById("password-field2").value
+    
+            if (pass1 != pass2 || pass2 == "") {
+                setError("pass_error2", "Password Not Matched ", "password-field2");
+                return false;
+    
+            }
+            else {
+                setCorrect("pass_error2", "password-field2");
+                return true;
+    
+            }
+        }
+    
+        // To validate Institute name
+        function isValidInstitute() {
+            let flag = isEmptyField("college", "college_error");
+            if (flag == false) {
+                return false;
+            }
+            console.log("College data");
+            var regName = /college|university|institute|school|academy/
+            var name = document.getElementById('college').value;
+    
+            if (regName.test(name.toLowerCase())) {
+                setCorrect("college_error", "college");
+                console.log("Valid college name")
+    
+                return true;
+    
+            } else {
+                console.log("inValid college name")
+                setError("college_error", "Please Enter Valid College Name", "college");
+                return false;
+    
+            }
+    
+        }
+        // To Validate MAil ID
+        function validateMailID() {
+    
+            let flag = isEmptyField("mail", "mail_error");
+            if (flag == false) {
+                return false;
+            }
+    
+            console.log("mail id");
+            var regName = /[a-z0-9!#$%&'+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'+/=?^_`{|}~-]+)@(?:[a-z0-9](?:[a-z0-9-][a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+            var name = document.getElementById('mail').value;
+    
+            if (regName.test(name)) {
+                setCorrect("mail_error", "mail");
+                return true;
+    
+            } else {
+                console.log("inValid mail")
+                setError("mail_error", "Please Enter Valid Mail ID", "mail");
+                return false;
+    
+            }
+    
+        }
+    
+        // To check whether input filed is empty or not
+        function isEmptyField(inputID, errorID) {
+            let data = document.getElementById(inputID).value
+    
+            if (data.length == 0) {
+                console.log("Invalid Data of", inputID);
+                setError(errorID, "Please Fill The Field", inputID);
+                return false;
+            }
+    
+            else {
+                console.log("Correct data");
+                setCorrect(errorID, inputID);
+                return true;
+            }
+        }
+    
+        // Code for Drop down whether input is selected or not
+        function isSelected(inputID, errorID) {
+            var ddl = document.getElementById(inputID);
+            var selectedValue = ddl.options[ddl.selectedIndex].value;
+            if (selectedValue == "select") {
+    
+                document.getElementById(inputID).style.border = "1px solid red";
+                document.getElementById(errorID).innerHTML = "Please Select The Option";
+                document.getElementById(errorID).style.color = "red";
+                return false;
+            }
+            else {
+                document.getElementById(inputID).style.border = "1px solid blue";
+                document.getElementById(errorID).innerHTML = "";
+                return true;
+            }
+    
+        }
+    
+        function isCheckBoxSelected() {
+            var confirm = document.getElementById("cbox");
+            if (document.getElementById("cbox").checked) {
+                console.log("selected cbox")
+                return true;
+            }
+            else {
+    
+                console.log("plz selected cbox");
+                // swal("Registration Successful", "", "success");
+                document.getElementById("cbox").focus();
+                return false;
+            }
+        }
+        // This function get call at the time of form submission & check whether data is correctly fill
+        function validateData() {
+    
+    
+            let flag1 = isValidData('fname', 'fname_error');
+            let flag2 = isValidData('lname', 'lname_error');
+            let flag3 = isStrongPass();
+            let flag4 = confirmedPass();
+            let flag5 = isValidData('city', 'city_error');
+            let flag6 = isValidData('state', 'state_error');
+            let flag7 = validateMailID();
+            let flag8 = isSelected('profession', 'profession_error');
+            let flag9 = isValidInstitute();
+            let flag10 = ValidCaptcha();
+            let flag11 = isGenderChecked();
+            let flag12 = isCheckBoxSelected();
+            let flag13 = isSelected('education', 'education_error');
+    
+            if (flag1 && flag2 && flag3 && flag4 && flag5 && flag6 && flag7 && flag8 && flag9 && flag10 && flag11 && flag12 && flag13
+            ) {
+            alert("Good luck enjoy Journey");
+    
+            }
+            else {
+                return false;
+            }
+    
+        }
+    
+    
+    
+        //  To handle show password field
+        $(".toggle-password1").click(function () {
+    
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+    
+        $(".toggle-password2").click(function () {
+    
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+    
+        
+    </script>
+</body>
+</html>

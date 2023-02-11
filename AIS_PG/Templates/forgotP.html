@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Forgot Password</title>
+    <style>
+         *{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /*background-image: url('\static\image\bgimage.jpeg');*/
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+    width: auto;
+    
+}
+
+.navbar{
+    width: auto;
+    height: 75px;
+    margin-left: 150px;
+    margin-bottom: 50px;
+}
+
+.logo{
+    color: #ff7200;
+    font-size: 50px;
+    font-family: Arial;
+    padding-left: 20px;
+    float: left;
+    padding-top: 10px;
+    margin-top: 5px
+}
+
+.menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+    margin-left: 30px;
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 24px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: #ff7200;
+}
+.srch:focus{
+    outline: none;
+}
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-options {
+  display: none;
+  position: absolute;
+  overflow: auto;
+  align-items: center;
+}
+.dropdown:hover .dropdown-options {
+  display: block;
+  align-items: center;
+}
+.dropdown a{
+    text-decoration: none;
+    color: rgb(6, 6, 6);
+    font-size: 20px;
+    align-items: center;
+}
+
+.dropdown a:hover{
+    color: #ff7200;
+}
+::placeholder{
+    color: rgb(34, 32, 32);
+    font-family: Arial;
+}
+
+.btnn{
+    width: 100px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    font-size: 18px;
+    margin-left: 100px;
+    color: #fff;
+    margin-top: 27px;
+}
+.btnn:hover{
+    background: #fff;
+    color: #ff7200;
+}
+.btnn a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+.form .link{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    padding-top: 20px;
+    text-align: center;
+}
+.form .link a{
+    text-decoration: none;
+    color: #ff7200;
+}
+.liw{
+    padding-top: 15px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.icons a{
+    text-decoration: none;
+    color: #fff;
+}
+.icons ion-icon{
+    color: #fff;
+    font-size: 30px;
+    padding-left: 14px;
+    padding-top: 5px;
+    transition: 0.3s ease;
+}
+.icons ion-icon:hover{
+    color: #ff7200;
+}
+
+
+*,:after,:before{box-sizing:border-box}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+a{color:inherit;text-decoration:none}
+
+.login-wrap{
+	width:100%;
+    margin-top: 3rem;
+    margin-left: 32rem;
+	max-width:525px;
+	height: 39rem;
+	position:relative;
+	
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+.login-html{
+	width:100%;
+	height:100%;
+	position:absolute;
+	padding:40px 70px 50px 70px;
+	background:rgba(17, 17, 17, 0.698);
+}
+
+.login-html .sign-in-htm{
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	position:absolute;
+	transition:all .4s linear;
+    
+}
+.login-form{
+	min-height:345px;
+	position:relative;
+	perspective: 800px;
+	transform-style:preserve-3d;
+}
+.login-form .group{
+	margin-bottom:15px;
+}
+.login-form .group .button{
+	width:100%;
+	color:#fff;
+	display:block;
+}
+.login-form .group input[data-type="password"]{
+	-webkit-text-security:circle;
+}
+.login-form .group .label{
+	color:#aaa;
+	font-size:12px;
+}
+.login-form .group .button{
+	background:#ff7200;
+}
+.hr{
+	height:2px;
+	margin:20px 0 0 0;
+	background:rgb(172, 170, 170);
+}
+.foot-lnk{
+	text-align:center;
+    color: #fff;
+    font-size: 15px;
+}
+.foot-lnk a{
+    color: #ff7200;
+}
+h1{
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.bton{
+    border:none;
+	padding:15px 20px;
+	border-radius:15px;
+    background:#ff7200;
+    width:100%;
+	color:#fff;
+	display:block;
+
+}
+h2{
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+label{
+    color:#aaa;
+	font-size:12px;
+}
+input{
+    border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:solid rgba(255,255,255,.1);
+    width:100%;
+	color:rgb(11, 11, 11);
+	display:block;
+}
+button{
+    width:50%;
+	color:rgb(9, 9, 9);
+	display:block;
+    align-items: center;
+    background-color:solid rgba(255,255,255,.1);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+    </style>
+</head>
+<body style="background-image:linear-gradient( rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(/static/image/bgimage.jpeg)">
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">AIS-PG's</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="{% url 'maindesktop' %}">Home</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li><a href="{% url 'aboutUs' %}">AboutUs</a></li>
+                    <li><a href="{% url 'faq' %}">FAQ</a></li>        
+                <div class="dropdown">
+                   <a><button class="btnn">Profile</button></a>
+                    <div class="dropdown-options">
+                      <a href="{% url 'TenantSignup' %}">Signup</a><br>
+                      <a href="{% url 'maindesktop' %}">Login</a><br>
+                    </div>
+                </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-wrap">
+	<div class="login-html">
+        <h2>Forgot Password?</h2>
+        <div class="login-form">
+			<div class="sign-in-htm">
+				<div class="group">
+                    <label>Enter Mail-ID:</label><label style="color: red;">*</label><br>
+            <input type="text" class="form-control inputdata" placeholder="Enter Mail-ID" id="mailid">
+            <!-- Username Error msg -->
+            <small class="mandatory" id="mail_error"></small>
+                </div>
+                    <button type="button" class="btn" onclick="validateMailID()" id="mail_btn"
+                      value="Send OTP">Send OTP</button>
+                <div class="group">
+                    <label>Enter OTP:</label><br>
+                    <input type="text" class="form-control inputdata" placeholder="4-Digit Number" id="otp" disabled>
+                    <!-- OTP Error msg -->
+                    <small class="mandatory" id="otp_error"></small>
+                </div>
+                <div style="border: 0px solid red;margin-bottom: 1%;margin-top: 7px;">
+                    <button type="button" class="btn btn-primary text-center" onclick="checkOTP()" disabled id="otp_btn">Confirm
+                      OTP</button>
+                  </div>
+                <div class="group">
+                    <div class="row ">
+                      <div class="col input-container">
+                        <input type="password" class="form-control inputdata" id="password-field1"
+                          placeholder="Enter New Password" disabled oninput="CheckPass()"><label style="color: red;"></label>
+                        <span toggle="#password-field1" class="fa fa-fw fa-eye field-icon toggle-password1"
+                          style="margin-left:2%;font-size: 1.3vw;"></span>
+                      </div>
+                    </div>
+                    <!-- password Error msg -->
+                    <small class="mandatory" id="pass_error1">
+                      Please Enter the Strong Password
+        
+                    </small>
+                </div>
+                <div class="group">
+                        <input type="password" class="form-control inputdata" id="password-field2"
+                          placeholder="Confirm Password" disabled  onfocusout="MatchPass()"  onpaste="return false">
+                        <span toggle="#password-field2" class="fa fa-fw fa-eye field-icon toggle-password2"
+                          style="margin-left:2%;font-size: 1.3vw;"></span>
+                </div><div class="hr"></div>
+                    <button class="bton"><a href="MainDesktop.html">Continue</a></button>
+				
+        
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+  
+    function MatchPass()  //To check whether password matches or not
+    {
+        let pass1 = document.getElementById("password-field1").value
+        let pass2 = document.getElementById("password-field2").value
+    
+        if (pass1 != pass2 ) {
+            setError("pass_error2", "Password Not Matched ", "password-field2");
+            return false;
+    
+        }
+        else {
+            setCorrect("pass_error2", "password-field2");
+            return true;
+    
+        }
+    
+    }
+    
+    function CheckPass()  //To check whether password is strong or not
+    {
+        var regName = /^(?=.\d)(?=.[!@#$%^&])(?=.[a-z])(?=.*[A-Z]).{6,12}$/;
+        let pass = document.getElementById("password-field1").value
+    
+       
+            if (!regName.test(pass)) {
+                console.log("Invalid pass");
+                setError("pass_error1", "Please Enter The Strong Password", "password-field1");
+                return false;
+    
+            } else {
+                setCorrect("pass_error1", "password-field1");
+    
+                console.log("Valid pass")
+                return true;
+            }
+    
+        
+    
+    
+    
+    }
+    // To Validate MAil ID
+    function validateMailID() {
+        console.log("mail id");
+        var regName = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/
+        var name = document.getElementById('mailid').value;
+    
+        if (regName.test(name)) {
+            setCorrect("mail_error", "mailid");
+            document.getElementById("otp").disabled = false;
+            document.getElementById("otp_btn").disabled = false;
+            document.getElementById("mail_btn").value = "Resend OTP";
+    
+    
+            alert("OTP is shared to your mail ID");
+    
+    
+        } else {
+            console.log("inValid mail")
+            setError("mail_error", "Invalid Mail ID", "mailid");
+    
+        }
+    }
+    
+    // To validate OTP
+    function checkOTP() {
+    
+        let OTP = document.getElementById("otp").value;
+    
+        if (OTP == "1234") {
+            console.log("I got call with correct OTP");
+            setCorrect("otp_error", "otp");
+            document.getElementById("password-field1").disabled = false;
+            document.getElementById("password-field2").disabled = false;
+            document.getElementById("continue_btn").disabled = false;
+    
+        }
+        else {
+            console.log("I got call with wrong OTP");
+            setError("otp_error", "Invalid OTP", "otp");
+    
+        }
+    }
+    
+    +
+        // To check whether password is strong or not
+        function isStrongPass() {
+            let pass = document.getElementById("password-field1").value;
+            var re = /^(?=.\d)(?=.[!@#$%^&])(?=.[a-z])(?=.*[A-Z]).{6,12}$/;
+            return re.test(pass);
+        }
+    
+    // To handle show password field
+    $(".toggle-password1").click(function () {
+    
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
+    });
+    
+    $(".toggle-password2").click(function () {
+    
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
+    });
+    
+    function setError(id, error, id2) {
+        document.getElementById(id).innerHTML = error;
+        document.getElementById(id).style.color = "red";
+        document.getElementById(id2).style.borderColor = "red";
+    
+    }
+    
+    function setCorrect(id1, id2) {
+        document.getElementById(id1).innerHTML = "";
+        document.getElementById(id2).style.borderColor = "blue";
+    
+    }
+    
+    function validateData()
+    {
+        if(MatchPass()&&CheckPass())
+        {
+            alert("Congratulation Your Password Updated Successfully .Do you want to continue ?");
+        return true;
+    
+        }
+        else
+        {
+            alert("Please Fill The Fields");
+        return false
+    
+        }
+    }
+    </script>
+</body>
+</html>

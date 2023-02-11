@@ -1,0 +1,260 @@
+<!DOCTYPE >
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ABOUT US </title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /*background-image: url('\static\image\bgimage.jpeg');*/
+    background-size: cover;
+    height: 130vh;
+    background-repeat: no-repeat;
+    width: auto;
+    
+}
+
+.navbar{
+    width: auto;
+    height: 75px;
+    margin-left: 150px;
+    margin-bottom: 50px;
+}
+
+.logo{
+    color: #ff7200;
+    font-size: 50px;
+    font-family: Arial;
+    padding-left: 20px;
+    float: left;
+    padding-top: 10px;
+    margin-top: 5px
+}
+
+.menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+    margin-left: 30px;
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 24px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: #ff7200;
+}
+
+.btn{
+    width: 70px;
+    height: 40px;
+    background: #ff7200;
+    border: 2px solid #ff7200;
+    margin-top: 13px;
+    color: #fff;
+    font-size: 15px;
+    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+.btn:hover{
+    color: #000;
+}
+
+.btn:focus{
+    outline: none;
+}
+
+.srch:focus{
+    outline: none;
+}
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-options {
+  display: none;
+  position: absolute;
+  overflow: auto;
+  align-items: center;
+}
+.dropdown:hover .dropdown-options {
+  display: block;
+  align-items: center;
+}
+.dropdown .btnn{
+    width: 100px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    font-size: 18px;
+    margin-left: 100px;
+    color: #fff;
+    margin-top: 27px;
+}
+.dropdown a{
+    text-decoration: none;
+    color: rgb(6, 6, 6);
+    font-size: 20px;
+    align-items: center;
+}
+
+.dropdown a:hover{
+    color: #ff7200;
+}
+.about-1{
+    margin: 30px;
+    padding: 5px;
+}
+.about-1 h1{
+    text-align: center;
+    color: black;
+    font-weight: bolder;
+    font-size: 50px;
+}
+.about-1 h2{
+    text-align: center;
+    padding: 15px;
+    color: #fff;
+    font-size: 30px;
+}
+.about-1 h3{
+    text-align: center;
+
+    color: #fff;
+    font-size: 20px;
+}
+
+/*===========================
+ adding style to about items 
+============================*/
+
+.team{
+  display: flex;
+  justify-content: center;
+  width: auto;
+  text-align: center;
+  flex-wrap: wrap;
+  border: #8e8b8b;
+  margin: 20px;
+}
+
+.team .team_member{
+  background: #fff;
+  margin: 30px;
+  margin-bottom: 50px;
+  width: 400px;
+  padding: 50px;
+  line-height: 20px;
+  color: #8e8b8b;  
+}
+
+.team .team_member h3{
+  color: #81c644;
+  font-size: 26px;
+  margin-top: 50px;
+  margin: 30px 30px 30px 30px;
+}
+
+.team .team_member p{
+  color: rgb(11, 11, 11);
+  margin: 30px 30px 30px 30px;
+  font-size: 20px;
+}
+
+.team .team_member .team_img{
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.team .team_member .team_img img{
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+}
+
+
+    </style>
+
+</head>
+<body style="background-image:linear-gradient( rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(/static/image/bgimage.jpeg)">
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">AIS-PG's</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="{% url 'maindesktop' %}">Home</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li><a href="#">AboutUs</a></li>
+                    <li><a href="{% url 'faq' %}">FAQ</a></li> 
+                    <div class="dropdown">
+                        <a><button class="btnn">Profile</button></a>
+                         <div class="dropdown-options">
+                           <a href="{% url 'TenantSignup' %}">Signup</a><br>
+                           <a href="{% url 'maindesktop' %}">Login</a><br>
+                         </div>
+                     </div>    
+                </ul>
+            </div>
+        </div>
+      </div>
+ <section id="ABOUT">
+    
+     <div class="about-1">
+         <h1> ABOUT US </h1>
+         <p><h2>Find a comfortable stay with us</h2>
+        <h3>We can provide you easy options to find accommodation in your perfered area that can fulfill all your requirements.</h3></P>
+     </div>
+     <div class="team">
+        <div class="team_member">
+          <h3>Why We?</h3>
+          <p>In Today's era, most people are moving out from their respective hometown for jobs, studies, or some other personal reasons. For this they need a proper accommodation. Also for owners it is difficult to find proper tenant So our website AIS is providing a system that would make their work easier and will help owners to get proper and verified tenants. As this website is user friendly that makes it easier for everyone to find comfortable and flexible options according to their needs.</p>
+        </div>
+        <div class="team_member">
+          <h3>How?</h3>
+          <p>Once Tenant visit our website he will came across the home page where there will be different PG’s option available for him to choose. He can visit different PG’s portal and can see their provided facilities. So that he can find comfortable and affordable living arrangement by choosing different options with respect to his requirements. Once he decided which PG he is comfortable with then he can proceed ahead by doing registration and can able to receive the service that he is looking for.</p></div>
+        <!--<div class="team_member">
+          <h3>Alex Wood</h3>
+          <p class="role">Support Lead</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p>
+        </div>-->
+      </div>
+ </section>
+    
+</body>
+</html>
+

@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title> Owner Dashboard </title>
+    <style>
+      /* Googlefont Poppins CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%);
+  background-size: cover;
+  height: 250vh;
+  background-repeat: no-repeat;
+  width: auto;
+}
+.sidebar{
+  position: fixed;
+  height: 100%;
+  width: 240px;
+  background: #101010;
+  transition: all 0.5s ease;
+}
+.sidebar.active{
+  width: 60px;
+}
+.sidebar .logo-details{
+  height: 80px;
+  margin-left: 70px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.sidebar .logo-details .logo_name{
+  color: #ff7200;
+  font-size: 24px;
+  font-weight: 500;
+  min-width: 60px;
+  text-align: center
+}
+.sidebar .nav-links{
+  margin-top: 10px;
+}
+.sidebar .nav-links li{
+  position: relative;
+  list-style: none;
+  height: 50px;
+}
+.sidebar .nav-links li a{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li a.active{
+  background: #ff7200;
+}
+.sidebar .nav-links li a:hover{
+  background: #ff7200;
+}
+.sidebar .nav-links li i{
+  min-width: 60px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+}
+.sidebar .nav-links li a .links_name{
+  color: grey;  
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  font-weight: bold;
+}
+.sidebar .nav-links .log_out{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.home-section{
+  position: relative;
+  background: rgba(73, 72, 72, 0.302);
+  min-height: 100vh;
+  width: calc(100% - 240px);
+  left: 240px;
+  transition: all 0.5s ease;
+}
+.sidebar.active ~ .home-section{
+  width: calc(100% - 60px);
+  left: 60px;
+}
+.home-section nav{
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: calc(100% - 240px);
+  left: 240px;
+  z-index: 100;
+  padding: 0 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+.sidebar.active ~ .home-section nav{
+  left: 60px;
+  width: calc(100% - 60px);
+}
+.home-section nav .sidebar-button{
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+nav .sidebar-button i{
+  font-size: 35px;
+  margin-right: 10px;
+}
+.home-section nav .search-box{
+  position: relative;
+  height: 50px;
+  max-width: 550px;
+  width: 100%;
+  margin: 0 20px;
+}
+nav .search-box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  background: #F5F6FA;
+  border: 2px solid #EFEEF1;
+  border-radius: 6px;
+  font-size: 18px;
+  padding: 0 15px;
+}
+nav .search-box .bx-search{
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background: #ff7200;;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  transition: all 0.4 ease;
+}
+.home-section nav .profile-details{
+  display: flex;
+  align-items: center;
+  background: #F5F6FA;
+  border: 2px solid #EFEEF1;
+  border-radius: 6px;
+  height: 50px;
+  min-width: 190px;
+  padding: 0 15px 0 2px;
+}
+nav .profile-details img{
+  height: 40px;
+  width: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+nav .profile-details .admin_name{
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 10px;
+  white-space: nowrap;
+}
+nav .profile-details i{
+  font-size: 25px;
+  color: #333;
+}
+.home-section .home-content{
+  position: relative;
+  padding-top: 104px;
+}
+.home-content .overview-boxes{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  margin-bottom: 26px;
+}
+.overview-boxes .box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / 4 - 15px);
+  background: #fff;
+  padding: 15px 14px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.overview-boxes .box-topic{
+  font-size: 20px;
+  font-weight: 500;
+}
+.home-content .box .number{
+  display: inline-block;
+  font-size: 35px;
+  margin-top: -6px;
+  font-weight: 500;
+}
+.home-content .box .indicator{
+  display: flex;
+  align-items: center;
+}
+.home-content .box .indicator i{
+  height: 20px;
+  width: 20px;
+  background: #8FDACB;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  margin-right: 5px;
+}
+.box .indicator i.down{
+  background: #e87d88;
+}
+.home-content .box .indicator .text{
+  font-size: 12px;
+}
+.home-content .box .cart{
+  display: inline-block;
+  font-size: 32px;
+  height: 50px;
+  width: 50px;
+  background: #cce5ff;
+  line-height: 50px;
+  text-align: center;
+  color: #66b0ff;
+  border-radius: 12px;
+  margin: -15px 0 0 6px;
+}
+.home-content .box .cart.two{
+   color: #2BD47D;
+   background: #C0F2D8;
+ }
+.home-content .box .cart.three{
+   color: #ffc233;
+   background: #ffe8b3;
+ }
+.home-content .box .cart.four{
+   color: #e05260;
+   background: #f7d4d7;
+ }
+.home-content .total-order{
+  font-size: 20px;
+  font-weight: 500;
+}
+.home-content .sales-boxes{
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0 20px; */
+}
+
+/* left box */
+.home-content .sales-boxes .recent-sales{
+  width: 65%;
+  background: #fff;
+  padding: 20px 30px;
+  margin: 0 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.home-content .sales-boxes .sales-details{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* Responsive Media Query */
+@media (max-width: 1240px) {
+  .sidebar{
+    width: 60px;
+  }
+  .sidebar.active{
+    width: 220px;
+  }
+  .home-section{
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  .sidebar.active ~ .home-section{
+    /* width: calc(100% - 220px); */
+    overflow: hidden;
+    left: 220px;
+  }
+  .home-section nav{
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  .sidebar.active ~ .home-section nav{
+    width: calc(100% - 220px);
+    left: 220px;
+  }
+}
+@media (max-width: 1150px) {
+  .home-content .sales-boxes{
+    flex-direction: column;
+  }
+  .home-content .sales-boxes .box{
+    width: 100%;
+    overflow-x: scroll;
+    margin-bottom: 30px;
+  }
+  .home-content .sales-boxes .top-sales{
+    margin: 0;
+  }
+}
+@media (max-width: 1000px) {
+  .overview-boxes .box{
+    width: calc(100% / 2 - 15px);
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 700px) {
+  nav .sidebar-button .dashboard,
+  nav .profile-details .admin_name,
+  nav .profile-details i{
+    display: none;
+  }
+  .home-section nav .profile-details{
+    height: 50px;
+    min-width: 40px;
+  }
+  .home-content .sales-boxes .sales-details{
+    width: 560px;
+  }
+}
+@media (max-width: 550px) {
+  .overview-boxes .box{
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .sidebar.active ~ .home-section nav .profile-details{
+    display: none;
+  }
+}
+  @media (max-width: 400px) {
+  .sidebar{
+    width: 0;
+  }
+  .sidebar.active{
+    width: 60px;
+  }
+  .home-section{
+    width: 100%;
+    left: 0;
+  }
+  .sidebar.active ~ .home-section{
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+  .home-section nav{
+    width: 100%;
+    left: 0;
+  }
+  .sidebar.active ~ .home-section nav{
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+}
+.profile-details{
+  display: flex;
+  align-items: center;
+  background: #F5F6FA;
+  border: 2px solid #EFEEF1;
+  border-radius: 6px;
+  height: 50px;
+  min-width: 190px;
+  padding: 0 15px 0 2px;
+  margin-left: 55px;
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-details img{
+  height: 40px;
+  width: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.navigation .prev {
+  position: absolute;
+  z-index: 20;
+  font-size: 25px;
+  top: 43%;
+  right: 82%;
+  font-weight: 700;
+
+}
+.navigation .next {
+  right: 10px;
+  position: absolute;
+  font-size: 25px;
+  z-index: 20;
+  top: 43%;
+  left: 82%;
+}
+.navigation .nav-btn {
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+.navigation .nav-btn:hover {
+  background: white;
+}
+.carousel {
+  margin-top: 60px;
+  transition: all 0.3s ease;
+  margin-left: 199px;
+  margin-bottom: 30px;
+
+}
+.carousel img {
+  width: 900px;
+  height: 500px;
+  transition: all 0.3s ease;
+  border:4px solid rgb(10, 10, 10);
+}
+
+.item {
+  position: absolute;
+  display: none;
+}
+
+.main {
+  display: block;
+}
+
+
+.dot{
+  height: 10px;
+  width: 10px;
+  margin-right: 200px;
+  background-color: #bbb;
+  border-radius: 80%;
+  display: relative;
+  transition:  0.6s ease;
+}
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 3s;
+}
+::placeholder{
+    color: #fff;
+    font-family: Arial;
+}
+
+.content .par{
+    font-family: Arial;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+    color: #fff;
+    font-size: 25px;
+}
+
+.content h1{
+    font-family: 'Times New Roman';
+    font-size: 50px;
+    padding-left: 20px;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.content .cn{
+    width: 160px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    margin-left: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s ease;
+    
+}
+
+.content .cn a{
+    text-decoration: none;
+    color: rgb(249, 247, 247);
+    transition: .3s ease;
+}
+
+.cn:hover{
+    background-color: #fff;
+}
+
+.content span{
+    color: #ff7200;
+    font-size: 40px;
+}
+
+.content{
+    height: 380px;
+    position: absolute;
+    top:800px;
+    margin-left: 100px;
+    margin-top: 200px;
+}
+.styled-table {
+    border-collapse: collapse;
+    font-size: 1em;
+    font-family: sans-serif;
+    width: 400px;
+    background-color: rgba(17, 17, 17, 0.888);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    color: #fff;
+    margin-left: 100px;
+
+}
+.styled-table thead tr {
+    background-color:#ff7200;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 15px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type {
+    background-color: #f3f3f3;
+}
+.h1{
+      font-size: 25px;
+    font-family: Arial;
+    color: rgb(247, 247, 247);
+    margin-left: 100px;
+    margin-top:780px;
+    margin-bottom: 20px;
+    
+}
+
+.more h1{
+    font-size: 50px;
+    font-family: Arial;
+    color: rgb(252, 251, 251);
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+
+
+.more{
+    width:auto;
+    height:auto;
+  margin-left: 800px;
+  margin-bottom: 50px;
+  margin-top: -350px;
+   
+}
+.more a{
+    color: rgb(246, 244, 244);
+    font-size: 30px;
+    margin-left: 50px;
+    margin-top: 80px;
+    margin-right: 50px;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.contact-info{
+    width:900px;
+    height:auto;
+  margin-left: 650px;
+  margin-top: -170px;
+   
+}
+.contact-info i{
+    color: rgb(246, 244, 244);
+    font-size: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.contact-info  h1{
+    font-size: 40px;
+    font-family: Arial;
+    color: rgb(252, 251, 251);
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+.caption {
+  position: absolute;
+  bottom: 0;
+  width: 103%;
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background: rgba(0, 0, 0, 0.3);
+  height: 35px;
+}
+.fa{
+  size: 20px;
+}
+.name{
+  font-size: 30px;
+    font-family: Arial;
+    color: rgb(247, 247, 247);
+  text-align: center;
+  margin-top: 50px;
+}
+.btnn{
+  width: 240px;
+    height: 30px;
+    background: #ff7200;
+    border: none;
+    margin-top: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.4s ease;
+    align-items: center;
+    margin-top: 50px;
+}
+.btnn:hover{
+    background: #fff;
+    color: #ff7200;
+}
+
+    </style>
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+  <body style="background-image:linear-gradient( rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(/static/image/bgimage.jpeg)">
+  <div class="sidebar">
+    <div class="logo-details">
+
+      <span class="logo_name">AIS-PG</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="#" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'TenantInfo' %}">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Tenant Info</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'OwnerInfo' %}">
+            <i class='bx bx-cut'></i>
+            <span class="links_name">Delete Profile</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="{% url 'logout' %}">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <form method="POST">
+        {% for x in result %}
+      <div class="profile-details">
+        <!--<img src="images/profile.jpg" alt="">-->
+        <span class="admin_name">{{ x.0 }}</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+
+    <div class="home-content">
+      <div class="overview-boxes">
+         
+        </div>
+      </div>
+
+      <div class="name">
+        <!--form method="POST"-->
+     
+      <h1>{{x.1}}</h1>
+        <div><i class="fas fa-envelope">&#9993; <u>{{x.5}}</u></i>         
+        <i class="fas fa-phone">&#9990; <u>{{x.4}}</u></i></div>
+      </div>
+          <div class="slideshow-container" bg-color="grey">
+              <div class="navigation">
+                  <div class="prev nav-btn"><</div>
+                  <div class="next nav-btn">></div>
+                </div>
+                <div class="carousel">
+                  <div class="item main">
+                    <img src="/static/image/front3.jpeg" alt="mountain" />
+                  </div>
+              <div class="item">
+                    <img src="/static/image/balcony2.jpeg" alt="beach" />
+                  </div>
+                  <div class="item">
+                    <img src="/static/image/bed2.jpeg" alt="cityscape" />
+                  </div>      
+          </div>            
+  </div>
+  <!--div class="content">
+    <span>PG-INFO</span>
+  <p class="par">{{x.3}}</p>
+  </div-->
+      <table class="styled-table">
+          <div class="h1">
+              <h1>Room Realted Info:-</h1>
+          </div>
+          <thead>
+              <tr>
+                  <th>Members</th>
+                  <th>Rent</th>
+                  <th>Available Rooms</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>1 Memb</td>
+                  <td>{{x.7}}</td>
+                  <td>{{x.17}}</td>
+              </tr>
+              <tr class="active-row">
+                  <td>2 Memb</td>
+                  <td>{{x.8}}</td>
+                  <td>{{x.18}}</td>
+              </tr>
+              <tr class="active-row">
+                  <td>3 Memb</td>
+                  <td>{{x.9}}</td>
+                  <td>{{x.19}}</td>
+              </tr>
+              <tr class="active-row">
+                  <td>{{x.10}}</td>
+                  <td>{{x.11}}</td>
+                  <td>{{x.21}}</td>
+              </tr>
+              <!-- and so on... -->
+          </tbody>
+      </table>
+      
+  
+  <div class ="more">
+      <h1>Amenities:-</h1>
+      <a href="#">&#x2022;Food  {{x.12}}</a><br><br>
+      <a href="#">&#x2022;Wifi  {{x.13}}</a><br><br>
+      <a href="#">&#x2022;Furniture {{x.14}}</a><br><br>
+      <a href="#">&#x2022;Laundary {{x.15}}</a><br><br>
+      <a href="#">&#x2022;Parking {{x.16}}</a><br><br>
+  </div>
+{% endfor %}
+</form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+const images = document.querySelector('.carousel').children;
+const totalImages = images.length;
+let index = 0;
+
+prev.addEventListener('click', () => {
+  nextImage('next');
+})
+
+next.addEventListener('click', () => {
+  nextImage('prev');
+})
+
+function nextImage(direction) {
+  if(direction == 'next') {
+    index++;
+    if(index == totalImages) {
+      index = 0;
+    }
+  } else {
+    if(index == 0) {
+      index = totalImages - 1;
+    } else {
+      index--;
+    }
+  }
+
+  for(let i = 0; i < images.length; i++) {
+    images[i].classList.remove('main');
+  }
+  images[index].classList.add('main');
+}
+
+ </script>
+
+</body>
+</html>
+

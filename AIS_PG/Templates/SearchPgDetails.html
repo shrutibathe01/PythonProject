@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PG-Profile</title>
+    <style>
+         *{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+  background-image: linear-gradient(rgba(0,0,0,.6)50%,rgba(0,0,0,.6)50%), url('./bgimage.jpeg');
+    background-size: cover;
+    height: 200vh;
+    background-repeat: no-repeat;
+  width: 100%;
+}
+
+.navbar{
+    width: 900px;
+    height: 75px;
+    margin-left: 150px;
+}
+
+.logo{
+    color: #ff7200;
+    font-size: 50px;
+    font-family: Arial;
+    padding-left: 20px;
+    float: left;
+    padding-top: 10px;
+    margin-top: 5px
+}
+
+.menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+    margin-left: 30px;
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 24px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: #ff7200;
+}
+.profile-details{
+  display: flex;
+  align-items: center;
+  background: #F5F6FA;
+  border: 2px solid #EFEEF1;
+  border-radius: 6px;
+  height: 50px;
+  min-width: 190px;
+  padding: 0 15px 0 2px;
+  margin-left: 55px;
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-details img{
+  height: 40px;
+  width: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.navigation .prev {
+  position: absolute;
+  z-index: 20;
+  font-size: 25px;
+  top: 65%;
+  right: 77.5%;
+  font-weight: 700;
+
+}
+.navigation .next {
+  right: 10px;
+  position: absolute;
+  font-size: 25px;
+  z-index: 20;
+  top: 65%;
+  left: 76%;
+}
+.navigation .nav-btn {
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+.navigation .nav-btn:hover {
+  background: white;
+}
+.carousel {
+  margin-top: 60px;
+  transition: all 0.3s ease;
+  margin-left: 300px;
+  margin-bottom: 30px;
+
+}
+.carousel img {
+  width: 900px;
+  height: 500px;
+  transition: all 0.3s ease;
+  border:4px solid rgb(10, 10, 10);
+}
+
+.item {
+  position: absolute;
+  display: none;
+}
+
+.main {
+  display: block;
+}
+
+
+.dot{
+  height: 10px;
+  width: 10px;
+  margin-right: 200px;
+  background-color: #bbb;
+  border-radius: 80%;
+  display: relative;
+  transition:  0.6s ease;
+}
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 3s;
+}
+::placeholder{
+    color: #fff;
+    font-family: Arial;
+}
+
+.content .par{
+    font-family: Arial;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+    color: #fff;
+    font-size: 25px;
+}
+
+.content h1{
+    font-family: 'Times New Roman';
+    font-size: 50px;
+    padding-left: 20px;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.content .cn{
+    width: 160px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    margin-left: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s ease;
+    
+}
+
+.content .cn a{
+    text-decoration: none;
+    color: rgb(249, 247, 247);
+    transition: .3s ease;
+}
+
+.cn:hover{
+    background-color: #fff;
+}
+
+.content span{
+    color: #ff7200;
+    font-size: 40px;
+}
+
+.content{
+    height: 380px;
+    position: absolute;
+    top:800px;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+.styled-table {
+    border-collapse: collapse;
+    font-size: 1em;
+    font-family: sans-serif;
+    width: 400px;
+    background-color: rgba(17, 17, 17, 0.888);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    color: #fff;
+    margin-left: 100px;
+
+}
+.styled-table thead tr {
+    background-color:#ff7200;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 15px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type {
+    background-color: #f3f3f3;
+}
+.h1{
+      font-size: 25px;
+    font-family: Arial;
+    color: rgb(247, 247, 247);
+    margin-left: 100px;
+    margin-top:780px;
+    margin-bottom: 20px;
+    
+}
+
+.more h1{
+    font-size: 50px;
+    font-family: Arial;
+    color: rgb(252, 251, 251);
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+
+
+.more{
+    width:auto;
+    height:auto;
+  margin-left: 800px;
+  margin-bottom: 50px;
+  margin-top: -310px;
+   
+}
+.more a{
+    color: rgb(246, 244, 244);
+    font-size: 30px;
+    margin-left: 50px;
+    margin-top: 80px;
+    margin-right: 50px;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.contact-info{
+    width:900px;
+    height:auto;
+  margin-left: 650px;
+  margin-top: -170px;
+   
+}
+.contact-info i{
+    color: rgb(246, 244, 244);
+    font-size: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.contact-info  h1{
+    font-size: 40px;
+    font-family: Arial;
+    color: rgb(252, 251, 251);
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+.caption {
+  position: absolute;
+  bottom: 0;
+  width: 103%;
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background: rgba(0, 0, 0, 0.3);
+  height: 35px;
+}
+.fa{
+  size: 20px;
+}
+.name{
+  font-size: 30px;
+    font-family: Arial;
+    color: rgb(247, 247, 247);
+  text-align: center;
+  margin-top: 50px;
+}
+.btnn{
+  width: 240px;
+    height: 30px;
+    background: #ff7200;
+    border: none;
+    margin-top: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.4s ease;
+    align-items: center;
+    margin-top: 50px;
+}
+.btnn:hover{
+    background: #fff;
+    color: #ff7200;
+}
+    </style>
+</head>
+<body style="background-image:linear-gradient( rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(/static/image/bgimage.jpeg)">
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">AIS-PG's</h2>
+            </div>
+            <div class="menu">
+               <ul>
+                  <li><a href="{% url 'maindesktop' %}">Home</a></li>
+                  <li><a href="{% url 'contact' %}">Contact</a></li>
+                  <li><a href="{% url 'aboutUs' %}">AboutUs</a></li>
+                  <li><a href="{% url 'faq' %}">FAQ</a></li>   
+                  <li class="fa fa-heart"><a href=""><!--&#9825;-->Save</a></li>      
+                <div class="profile-details">
+                    <!--<img src="images/profile.jpg" alt="">-->
+                    <span class="admin_name">shruti</span>
+                    <i class='bx bx-chevron-down' ></i>
+                  
+                </ul>
+            </div>
+        </div>
+        
+        <div class="name">
+          <form method="POST">
+          {% for x in details %}
+          <h1>{{x.1}}</h1>
+          <div><i class="fas fa-envelope">&#9993; <u>{{x.5}}</u></i>         
+          <i class="fas fa-phone">&#9990; <u>{{x.4}}</u></i></div>
+          </div>
+          <div class="slideshow-container" bg-color="grey">
+                <div class="navigation">
+                    <div class="prev nav-btn"><</div>
+                    <div class="next nav-btn">></div>
+                </div>
+                <div class="carousel">
+                    <div class="item main">
+                      <img src="/static/image/front3.jpeg" alt="mountain" />
+                </div>
+                <div class="item">
+                      <img src="/static/image/balcony2.jpeg" alt="beach" />
+                </div>
+                <div class="item">
+                      <img src="/static/image/bed2.jpeg" alt="cityscape" />
+                </div>      
+          </div>            
+    </div>
+    <div class="content">
+      <span>PG-INFO</span>
+    <p class="par">{{x.3}}</p>
+    </div>
+        <table class="styled-table">
+            <div class="h1">
+                <h1>Room Realted Info:-</h1>
+            </div>
+            <thead>
+                <tr>
+                    <th>Members</th>
+                    <th>Rent</th>
+                    <th>Available Rooms</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1 Memb</td>
+                    <td>{{x.7}}</td>
+                    <td>{{x.17}}</td>
+                </tr>
+                <tr class="active-row">
+                    <td>2 Memb</td>
+                    <td>{{x.8}}</td>
+                    <td>{{x.18}}</td>
+                </tr>
+                <tr class="active-row">
+                    <td>3 Memb</td>
+                    <td>{{x.9}}</td>
+                    <td>{{x.19}}</td>
+                </tr>
+                <tr class="active-row">
+                    <td>{{x.10}}</td>
+                    <td>{{x.11}}</td>
+                    <td>{{x.21}}</td>
+                </tr>
+                <!-- and so on... -->
+            </tbody>
+        </table>
+        
+    
+    <div class ="more">
+        <h1>Amenities:-</h1>
+        <a href="#">&#x2022;Food  {{x.12}}</a><br><br>
+        <a href="#">&#x2022;Wifi  {{x.13}}</a><br><br>
+        <a href="#">&#x2022;Furniture {{x.14}}</a><br><br>
+        <a href="#">&#x2022;Laundary {{x.15}}</a><br><br>
+        <a href="#">&#x2022;Parking {{x.16}}</a><br><br>
+    </div>
+   
+</div>
+<div style="border: 0px solid red;text-align: center;margin-bottom: 2%;">
+
+  <button type="submit" name="submit"class="btnn"><a href="{% url 'RegisterTenant' %}">Register</button>
+</div>
+{% endfor %}
+</form>
+
+<footer>
+    <br>
+    <br>
+</footer>
+<script>
+    const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+const images = document.querySelector('.carousel').children;
+const totalImages = images.length;
+let index = 0;
+
+prev.addEventListener('click', () => {
+  nextImage('next');
+})
+
+next.addEventListener('click', () => {
+  nextImage('prev');
+})
+
+function nextImage(direction) {
+  if(direction == 'next') {
+    index++;
+    if(index == totalImages) {
+      index = 0;
+    }
+  } else {
+    if(index == 0) {
+      index = totalImages - 1;
+    } else {
+      index--;
+    }
+  }
+
+  for(let i = 0; i < images.length; i++) {
+    images[i].classList.remove('main');
+  }
+  images[index].classList.add('main');
+}
+
+    </script>
+     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+</html>
